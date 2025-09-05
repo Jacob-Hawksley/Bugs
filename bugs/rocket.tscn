@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6ygoabtok1m0"]
+
+[ext_resource type="Script" uid="uid://w2kepeboipgc" path="res://rocket.gd" id="1_fj03e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fj03e"]
+radius = 173.026
+
+[node name="Rocket" type="RigidBody2D"]
+z_index = 1
+script = ExtResource("1_fj03e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-33, 48, -33, 16, -28, 16, -28, 12, -33, 12, -33, -18, -24, -37, -9, -46, 0, -48, 9, -47, 17, -43, 26, -34, 32, -22, 33, -18, 33, 12, 28, 12, 28, 16, 33, 16, 33, 48)
+
+[node name="Explosion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
+shape = SubResource("CircleShape2D_fj03e")

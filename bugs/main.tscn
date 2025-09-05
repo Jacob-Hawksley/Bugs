@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxaj285qb8dbd"]
+[gd_scene load_steps=3 format=3 uid="uid://bxaj285qb8dbd"]
 
 [ext_resource type="Script" uid="uid://dfseyuf3qknbb" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://8jyahvu604mu" path="res://ant.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ig7tw")
+
+[node name="Terrain" type="Node2D" parent="."]
+
+[node name="Background" type="Polygon2D" parent="Terrain"]
+polygon = PackedVector2Array(534, 243, 806, 114, 1142, 277, 1139, 621, 19, 617, 17, 560, 418, 558, 572, 390)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Terrain"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D"]
+polygon = PackedVector2Array(534, 243, 806, 114, 1142, 277, 1139, 621, 19, 617, 17, 560, 418, 558, 572, 390)
+
+[node name="Ant" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(220, 487)

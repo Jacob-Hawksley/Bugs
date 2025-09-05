@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://8jyahvu604mu"]
+
+[ext_resource type="Script" uid="uid://6djr5rpsiql1" path="res://ant.gd" id="1_5tacl"]
+[ext_resource type="Texture2D" uid="uid://4bkwf4f2vmvt" path="res://temp.png" id="1_oav7h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5tacl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oav7h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ant" type="CharacterBody2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_5tacl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-446, -230, -445, 231, 449, 228, 444, -232)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5tacl")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -230)
