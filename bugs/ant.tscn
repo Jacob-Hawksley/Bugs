@@ -26,3 +26,4 @@ sprite_frames = SubResource("SpriteFrames_5tacl")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, -230)
+rotation = 1.5708
