@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxaj285qb8dbd"]
+[gd_scene load_steps=3 format=3 uid="uid://bxaj285qb8dbd"]
 
 [ext_resource type="Script" uid="uid://dfseyuf3qknbb" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://8jyahvu604mu" path="res://ant.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://b6ygoabtok1m0" path="res://rocket.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ig7tw")
@@ -21,6 +20,3 @@ polygon = PackedVector2Array(534, 243, 806, 114, 1142, 277, 1139, 621, 19, 617, 
 
 [node name="Ant" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(220, 487)
-
-[node name="Rocket" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(391, 397)
