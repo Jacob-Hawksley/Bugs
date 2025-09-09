@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6ygoabtok1m0"]
 
-[ext_resource type="Script" uid="uid://w2kepeboipgc" path="res://rocket.gd" id="1_fj03e"]
-[ext_resource type="Texture2D" uid="uid://b12anx5fvpxpe" path="res://rocket.png" id="2_5gt1y"]
+[ext_resource type="Script" uid="uid://w2kepeboipgc" path="res://dung.gd" id="1_w6gjr"]
+[ext_resource type="Texture2D" uid="uid://b12anx5fvpxpe" path="res://rocket.png" id="2_ax4h0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fj03e"]
 radius = 173.026
@@ -10,16 +10,16 @@ radius = 173.026
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_5gt1y")
+"texture": ExtResource("2_ax4h0")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Rocket" type="RigidBody2D"]
+[node name="Dung" type="RigidBody2D"]
 z_index = 1
-script = ExtResource("1_fj03e")
+script = ExtResource("1_w6gjr")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.25, 0.25)
