@@ -1,29 +1,76 @@
-[gd_scene load_steps=4 format=3 uid="uid://8jyahvu604mu"]
+[gd_scene load_steps=11 format=3 uid="uid://8jyahvu604mu"]
 
 [ext_resource type="Script" uid="uid://6djr5rpsiql1" path="res://dungbeetle.gd" id="1_5tacl"]
-[ext_resource type="Texture2D" uid="uid://4bkwf4f2vmvt" path="res://temp.png" id="1_oav7h"]
+[ext_resource type="Texture2D" uid="uid://bq6nvixmihdmb" path="res://1757340681626.png" id="2_femoj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2s0j"]
+atlas = ExtResource("2_femoj")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f53re"]
+atlas = ExtResource("2_femoj")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyuek"]
+atlas = ExtResource("2_femoj")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uh8b"]
+atlas = ExtResource("2_femoj")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e781g"]
+atlas = ExtResource("2_femoj")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkxb0"]
+atlas = ExtResource("2_femoj")
+region = Rect2(1280, 0, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5tacl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_oav7h")
+"texture": SubResource("AtlasTexture_c2s0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f53re")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyuek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uh8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e781g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkxb0")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mlac"]
+size = Vector2(170, 155)
+
 [node name="DungBeetle" type="CharacterBody2D"]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.9, 0.9)
 script = ExtResource("1_5tacl")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-446, -230, -445, 231, 449, 228, 444, -232)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(28, -52)
 sprite_frames = SubResource("SpriteFrames_5tacl")
+frame = 5
+frame_progress = 1.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -230)
+position = Vector2(-20, -90)
 rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.99999, -4.50002)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6mlac")

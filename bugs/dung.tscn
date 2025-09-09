@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6ygoabtok1m0"]
+[gd_scene load_steps=6 format=3 uid="uid://b6ygoabtok1m0"]
 
 [ext_resource type="Script" uid="uid://w2kepeboipgc" path="res://dung.gd" id="1_w6gjr"]
-[ext_resource type="Texture2D" uid="uid://b12anx5fvpxpe" path="res://rocket.png" id="2_ax4h0"]
+[ext_resource type="Texture2D" uid="uid://b6asqfno78ya1" path="res://1757340067648.png" id="2_w6gjr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fj03e"]
 radius = 173.026
@@ -10,20 +10,19 @@ radius = 173.026
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ax4h0")
+"texture": ExtResource("2_w6gjr")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ax4h0"]
+radius = 18.0278
+
 [node name="Dung" type="RigidBody2D"]
 z_index = 1
 script = ExtResource("1_w6gjr")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.25, 0.25)
-polygon = PackedVector2Array(-33, 48, -33, 16, -28, 16, -28, 12, -33, 12, -33, -18, -24, -37, -9, -46, 0, -48, 9, -47, 17, -43, 26, -34, 32, -22, 33, -18, 33, 12, 28, 12, 28, 16, 33, 16, 33, 48)
 
 [node name="Explosion" type="Area2D" parent="."]
 scale = Vector2(0.25, 0.25)
@@ -35,5 +34,8 @@ disabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_r2l15")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ax4h0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
