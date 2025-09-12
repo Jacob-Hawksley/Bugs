@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccri6rnc3km1g"]
+
+[ext_resource type="Script" uid="uid://conf7tnbb8y2l" path="res://terrain.gd" id="1_0u6kl"]
+[ext_resource type="Script" uid="uid://fqy7l27t8t5a" path="res://static_body_2d.gd" id="1_206su"]
+
+[node name="Terrain" type="Node2D"]
+script = ExtResource("1_0u6kl")
+
+[node name="Background" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(3805, 2553, 3783, 140, 1795, 135, 1832, 219, 1967, 273, 2230, 296, 2338, 360, 2348, 1216, 1825, 1277, 1495, 1240, 1350, 987, 1125, 1213, 973, 805, 798, 785, 673, 849, 528, 852, -25, 1092, -14, 242, -183, 354, -186, 1068, -331, 1051, -1116, 1176, -1120, 596, -917, 468, -1207, 350, -2622, 328, -2631, 2535)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_206su")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(3805, 2553, 3783, 140, 1795, 135, 1832, 219, 1967, 273, 2230, 296, 2338, 360, 2348, 1216, 1825, 1277, 1495, 1240, 1350, 987, 1125, 1213, 973, 805, 798, 785, 673, 849, 528, 852, -25, 1092, -14, 242, -183, 354, -186, 1068, -331, 1051, -1116, 1176, -1120, 596, -917, 468, -1207, 350, -2622, 328, -2631, 2535)

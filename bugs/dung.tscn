@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://w2kepeboipgc" path="res://dung.gd" id="1_w6gjr"]
 [ext_resource type="Texture2D" uid="uid://b6asqfno78ya1" path="res://1757340067648.png" id="2_w6gjr"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fj03e"]
-radius = 173.026
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_r2l15"]
 animations = [{
 "frames": [{
@@ -18,7 +15,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ax4h0"]
-radius = 18.0278
+radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w6gjr"]
+radius = 18.4391
 
 [node name="Dung" type="RigidBody2D"]
 z_index = 1
@@ -26,10 +26,11 @@ script = ExtResource("1_w6gjr")
 
 [node name="Explosion" type="Area2D" parent="."]
 scale = Vector2(0.25, 0.25)
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
-shape = SubResource("CircleShape2D_fj03e")
-disabled = true
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Explosion"]
+polygon = PackedVector2Array(0, -124, -44, -116, -68, -104, -84, -96, -108, -52, -124, -8, -124, 28, -108, 64, -72, 100, -16, 116, 12, 116, 52, 108, 72, 88, 76, 84, 100, 56, 116, 8, 120, -36, 96, -76, 56, -116)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
@@ -38,4 +39,13 @@ sprite_frames = SubResource("SpriteFrames_r2l15")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ax4h0")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_w6gjr")
+
+[connection signal="area_entered" from="Explosion" to="." method="_on_explosion_area_entered"]
+[connection signal="body_entered" from="Explosion" to="." method="_on_explosion_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
