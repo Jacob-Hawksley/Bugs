@@ -1,17 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxaj285qb8dbd"]
+[gd_scene load_steps=5 format=3 uid="uid://bxaj285qb8dbd"]
 
 [ext_resource type="Script" uid="uid://dfseyuf3qknbb" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://8jyahvu604mu" path="res://DungBeetle.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://ccri6rnc3km1g" path="res://terrain.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ccri6rnc3km1g" path="res://crags.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://b3jmr4u8xqr7o" path="res://turn_manager.gd" id="4_1bvp3"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ig7tw")
 
-[node name="Ant" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(885, 713)
+[node name="DungBeetle2" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(1629, 1178)
 
 [node name="Terrain" parent="." instance=ExtResource("3_h2yge")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(574, 322)
 zoom = Vector2(0.3, 0.3)
+
+[node name="DungBeetle" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(-619, 1004)
+
+[node name="TurnManager" type="Node" parent="."]
+script = ExtResource("4_1bvp3")
