@@ -6,7 +6,7 @@ func _ready() -> void:
 func spawnteam1():
 	if Main.map == 'crags':
 		var db = dungbeetle.instantiate()
-		self.add_child(db)
+		add_child(db)
 		db.global_position = CragsData.DungBeetlePos1
 		db.visible = true
 		
