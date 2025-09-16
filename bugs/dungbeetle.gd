@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 				velocity.x = direction * SPEED
 				remainingspeed -= delta
 				
-			elif remainingspeed > 0:
+			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 				
 		if Input.is_action_just_pressed("shoot") and not shot:
