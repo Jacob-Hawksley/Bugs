@@ -1,3 +1,3 @@
 extends Node
 
-var map = null
+var map = 'crags'

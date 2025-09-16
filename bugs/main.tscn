@@ -13,5 +13,5 @@ script = ExtResource("1_ig7tw")
 position = Vector2(574, 322)
 zoom = Vector2(0.3, 0.3)
 
-[node name="TurnManager" type="Node" parent="."]
+[node name="TurnManager" type="Node2D" parent="."]
 script = ExtResource("4_1bvp3")
