@@ -13,17 +13,20 @@ func _process(delta: float) -> void:
 	if Main.team == teamnum and Main.turn == 'db':
 		var direction := Input.get_axis("left", "right")
 		if remainingspeed > 0:
+			remainingspeed -= delta
 			
 			if direction:
 				velocity.x = direction * SPEED
-				remainingspeed -= delta
+				
 				
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
-				
+		else:
+			velocity = Vector2.ZERO
 		if Input.is_action_just_pressed("shoot") and not shot:
 			shoot()
 			shot = true
+
 
 func shoot():
 	$AnimatedSprite2D.play("default")
